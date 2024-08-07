@@ -1,0 +1,15 @@
+---
+- name: REMOVE DESTINATION DIRECTORY FOR LOGS
+  file:
+    path: "{{ var_dest_dir }}"
+    state: absent
+  delegate_to: localhost
+  ignore_errors: yes
+
+- name: CREATE DESTINATION DIRECTORY FOR LOGS
+  file:
+    path: "{{ var_dest_dir }}"
+    state: directory
+  delegate_to: localhost
+  ignore_errors: yes
+...
